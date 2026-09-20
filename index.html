@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrier Flight</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.186.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.186.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="app"></canvas>
+  <div id="hud">
+    <div id="hud-speed">SPD 0</div>
+    <div id="hud-alt">ALT 0</div>
+    <div id="hud-gamepad">Gamepad: not connected</div>
+    <div id="hud-health"><div id="hud-health-fill"></div></div>
+    <div id="hud-bombs">BOMBS 1</div>
+    <div id="hud-missiles">MSL 4</div>
+    <div id="hud-score">SCORE 0</div>
+    <div id="hud-bosses"></div>
+    <div id="hud-resupply"></div>
+    <div id="hud-countermeasures"></div>
+  </div>
+  <div id="reticle-center"></div>
+  <div id="reticle-lock" hidden></div>
+  <div id="launch-prompt">Press FIRE to launch!</div>
+  <div id="resupply-toast" hidden>RESUPPLIED</div>
+  <canvas id="minimap" width="180" height="180"></canvas>
+  <div id="mission-overlay" hidden>
+    <div id="mission-title"></div>
+    <div id="mission-sub"></div>
+    <button id="mission-restart" type="button">Restart</button>
+  </div>
+  <div id="hint">
+    Controller: left stick or D-pad for pitch/roll, right stick yaw, triggers throttle, buttons fire/bomb/missile/countermeasures (remappable in Settings).<br />
+    Keyboard: W/S pitch, A/D roll, Q/E yaw, Shift/Ctrl throttle, Space fire, B bomb, F missile, C countermeasures.<br />
+    Press FIRE on the carrier deck to launch. Fly by your home carrier to resupply bombs/missiles (once per minute). Press ` (backtick) to toggle debug info.
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
